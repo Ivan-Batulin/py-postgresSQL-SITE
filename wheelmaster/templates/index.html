@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WheelMaster — интернет-магазин шин</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">WheelMaster</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="product-grid">
+            {% for product in products %}
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="{{ product.image_url }}" alt="{{ product.name }}">
+                    <div class="out-of-stock-badge">№ {{ product.id }} - Товар заканчивается</div>
+                </div>
+
+                <div class="product-info">
+                    <h2 class="product-title">{{ product.name }}</h2>
+                    <div class="product-code">Код: {{ product.specifications['Код'] }}</div>
+                    <div class="product-price">{{ product.price }} грн</div>
+
+                    <div class="product-actions">
+                        <a href="{{ url_for('order', product_id=product.id) }}" class="btn btn-primary">Купить</a>
+                        <button class="btn btn-secondary" onclick="quickOrder({{ product.id }})">Купить в 1 клик</button>
+                    </div>
+
+                    <!-- Спецификации -->
+                    <div class="specs-section">
+                        <h3>Спецификация</h3>
+                        <div class="specs-table">
+                            <table>
+                                <tr>
+                                    <td>Код</td>
+                                    <td>{{ product.specifications['Код'] }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Типорозмір</td>
+                                    <td>{{ product.specifications['Типорозмір'] }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Сезон</td>
+                                    <td>{{ product.specifications['Сезон'] }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Бренд</td>
+                                    <td>{{ product.specifications['Бренд'] }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Модель</td>
+                                    <td>{{ product.specifications['Модель'] }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Діаметр</td>
+                                    <td>{{ product.specifications['Діаметр'] }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Застосування</td>
+                                    <td>{{ product.specifications['Застосування'] }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Цінова категорія</td>
+                                    <td>{{ product.specifications['Цінова категорія'] }}</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+
+    <script>
+        function quickOrder(productId) {
+            alert('Функция "Купить в 1 клик" для товара ' + productId + ' будет реализована позже!');
+        }
+    </script>
+</body>
+</html>

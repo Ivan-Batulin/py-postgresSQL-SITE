@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ product.name }} — WheelMaster</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">WheelMaster</a>
+            <a href="/" class="btn btn-outline-light">← Назад к каталогу</a>
+        </div>
+    </nav>
+
+    <div class="product-details-page">
+        <div class="product-hero">
+            <div class="product-hero-image">
+                <img src="{{ product.image_url }}" alt="{{ product.name }}">
+            </div>
+
+            <div class="product-hero-info">
+                <h1>{{ product.name }}</h1>
+                <div class="product-hero-price">{{ product.price }} грн</div>
+
+                <div class="product-hero-actions">
+                    <form method="post" style="flex: 1;">
+                        <input type="number" name="quantity" min="1" value="1" style="width: 80px; margin-right: 10px; padding: 10px; border: 2px solid #ddd; border-radius: 5px;">
+                        <input type="text" name="name" placeholder="Ваше имя" required style="width: calc(50% - 60px); margin-right: 10px; padding: 10px; border: 2px solid #ddd; border-radius: 5px;">
+                        <input type="tel" name="phone" placeholder="Телефон" required style="width: calc(50% - 60px); margin-right: 10px; padding: 10px; border: 2px solid #ddd; border-radius: 5px;">
+                        <input type="email" name="email" placeholder="Email" required style="width: 100%; margin-bottom: 15px; padding: 10px; border: 2px solid #ddd; border-radius: 5px;">
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Оформить заказ</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Спецификации -->
+        <div class="specs-section">
+            <h3>Детальные характеристики</h3>
+            <div class="specs-table">
+                <table>
+                    <tr>
+                        <td>Код товара</td>
+                        <td>{{ product.specifications['Код'] }}</td>
+                    </tr>
+                    <tr>
+                        <td>Название модели</td>
+                        <td>{{ product.name }}</td>
+                    </tr>
+                    <tr>
+                        <td>Описание</td>
+                        <td>{{ product.description }}</td>
+                    </tr>
+                    <tr>
+                        <td>Цена</td>
+                        <td>{{ product.price }} грн</td>
+                    </tr>
+                    <tr>
+                        <td>Ширина профиля</td>
+                        <td>{{ product.width }} мм</td>
+                    </tr>
+                    <tr>
+                        <td>Типорозмір</td>
+                        <td>{{ product.specifications['Типорозмір'] }}</td>
+                    </tr>
+                    <tr>
+                        <td>Сезон</td>
+                        <td>{{ product.specifications['Сезон'] }}</td>
+                    </tr>
+                    <tr>
+                        <td>Бренд</td>
+                        <td>{{ product.specifications['Бренд'] }}</td>
+                    </tr>
+                    <tr>
+                        <td>Модель</td>
+                        <td>{{ product.specifications['Модель'] }}</td>
+                    </tr>
+                    <tr>
+                        <td>Индекс нагрузки</td>
+                        <td>{{ product.specifications['Індекс навантаження'] }}</td>
+                    </tr>
+                    <tr>
+                        <td>Индекс скорости</td>
+                        <td>{{ product.specifications['Індекс швидкості'] }}</td>
+                    </tr>
+                    <tr>
+                        <td>Диаметр</td>
+                        <td>{{ product.specifications['Діаметр'] }}</td>
+                    </tr>
+                    <tr>
+                        <td>Категория применения</td>
+                        <td>{{ product.specifications['Застосування'] }}</td>
+                    </tr>
+                    <tr>
+                        <td>Ценовой сегмент</td>
+                        <td>{{ product.specifications['Цінова категорія'] }}</td>
+                    </tr>
+                    <tr>
+                        <td>Тип покрытия</td>
+                        <td>{{ product.specifications['Тип покриття'] }}</td>
+                    </tr>
+                    <tr>
+                        <td>Тип протектора</td>
+                        <td>{{ product.specifications['Тип протектора'] }}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
