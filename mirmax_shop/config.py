@@ -36,6 +36,6 @@ Database Setup Requirements:
 # Database connection settings
 host = "127.0.0.1"
 user = "postgres"
-password = "Qor90126"
+password = "12313213"
 db_name = "shop_db"
 port = 5432
