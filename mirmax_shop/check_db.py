@@ -1,5 +1,5 @@
 """
-WheelMaster - Database Product Checker
+MIRMEX - Database Product Checker
 
 Database diagnostic utility for
 - Connection cleanup and error handling

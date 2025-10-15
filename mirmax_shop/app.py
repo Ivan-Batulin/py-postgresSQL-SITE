@@ -1,5 +1,5 @@
 """
-WheelMaster - Tire Online Store
+MIRMEX - Tire Online Store
 
 Main Flask application for tire online store with JSON product loading
 and PostgreSQL order storage functionality.

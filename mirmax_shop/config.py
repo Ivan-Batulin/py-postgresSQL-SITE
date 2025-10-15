@@ -1,7 +1,7 @@
 """
-WheelMaster - Database Configuration
+MIRMEX - Database Configuration
 
-PostgreSQL connection settings for WheelMaster tire online store.
+PostgreSQL connection settings for MIRMEX tire online store.
 Contains all necessary parameters for database connectivity.
 
 Configuration Parameters:
@@ -13,7 +13,7 @@ Configuration Parameters:
 
     password (str): PostgreSQL user password for authentication
                     IMPORTANT: Change this to your actual PostgreSQL password
-                    Default: "Qor90126" (example password)
+                    Default: "12313131" (example password)
 
     db_name (str): Target database name for MIRMEX application
                    Default: "shop_db" (shop database)

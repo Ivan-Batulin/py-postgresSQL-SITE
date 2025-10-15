@@ -1,7 +1,7 @@
 """
-WheelMaster - Database Initialization
+MIRMEX - Database Initialization
 
-PostgreSQL database setup utility for WheelMaster tire online store.
+PostgreSQL database setup utility for MIRMEX tire online store.
 
 This module provides:
 - Database table creation for products and orders

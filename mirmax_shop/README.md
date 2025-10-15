@@ -191,9 +191,6 @@ python -c "from main import app; app.run(host='0.0.0.0', port=5000)"
 ```bash
 # Product count
 python check_db.py
-
-# Order list
-python view_orders.py
 ```
 
 ## 📁 Project Structure
@@ -206,7 +203,6 @@ mirmex-tire-shop/
 ├── main.py               # Main Flask application
 ├── init_db.py            # Database initialization
 ├── check_db.py           # Database product check
-├── view_orders.py        # Order viewing
 ├── products.json         # Product data
 ├── static/               # Static files
 │   └── style.css        # CSS styles
@@ -222,14 +218,6 @@ mirmex-tire-shop/
 1. Open `products.json`
 2. Add a new product to the `products` array
 3. Run `python init_db.py` to update the database
-
-### Order Processing
-
-Orders are automatically saved to the `orders` table in PostgreSQL. To view:
-
-```bash
-python view_orders.py
-```
 
 ### Design Customization
 
@@ -293,9 +281,6 @@ The application logs all actions to the console when running in development mode
 ```bash
 # Product count
 python check_db.py
-
-# Recent orders
-python view_orders.py
 ```
 
 ## 🐛 Troubleshooting
